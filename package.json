@@ -1,5 +1,5 @@
 {
-  "name": "soa-stage",
+  "name": "dmitry-test-wf",
   "version": "0.0.0",
   "description": "Developer starter template for Finsweet projects.",
   "homepage": "https://github.com/finsweet/developer-starter#readme",
@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./bin/build.js",
     "build": "cross-env NODE_ENV=production node ./bin/build.js",
-    "publish:dev": "concurrently --raw \"bun run dev\" \"wf-publish --env=dev --dev-host=192.168.8.124\"",
+    "publish:dev": "concurrently --raw \"bun run dev\" \"wf-publish --env=dev\"",
     "publish:prod": "wf-publish --env=prod",
     "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
     "lint:fix": "eslint --ignore-path .gitignore ./src --fix",
