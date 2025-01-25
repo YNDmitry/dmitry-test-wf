@@ -25,8 +25,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./bin/build.js",
     "build": "cross-env NODE_ENV=production node ./bin/build.js",
-    "publish:dev": "concurrently --raw \"bun run dev\" \"wf-publish --env=dev\"",
-    "publish:prod": "wf-publish --env=prod",
+    "publish:dev": "concurrently --kill-others-on-fail=false --raw \"bun run dev\" \"wf-publish --env=dev\"",
+    "publish:prod": "wf-publish",
     "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
     "lint:fix": "eslint --ignore-path .gitignore ./src --fix",
     "check": "tsc --noEmit",
@@ -63,7 +63,6 @@
   },
   "config": {
     "ghUserName": "YNDmitry",
-    "browser": "arc",
     "packageManager": "bun",
     "repositoryName": "dmitry-test-wf"
   }
