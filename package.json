@@ -11,7 +11,8 @@
     "publish:pages": "wf-publish --env=prod --by-page",
     "lint": "eslint src/**/**/*.{js,ts}",
     "format": "prettier --write src/**/**/*.{js,ts}",
-    "lint:fix": "eslint src/scripts/**/**/*.{js,ts} --fix"
+    "lint:fix": "eslint src/scripts/**/**/*.{js,ts} --fix",
+    "help": "wf-publish --help"
   },
   "devDependencies": {
     "typescript": "~5.6.2",
