@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('123123 dfd2 efd')
+  console.log('123123 dfd2 efd d')
 })
