@@ -1,69 +1,37 @@
 {
   "name": "dmitry-test-wf",
+  "private": true,
   "version": "0.0.0",
-  "description": "Developer starter template for Finsweet projects.",
-  "homepage": "https://github.com/finsweet/developer-starter#readme",
-  "license": "ISC",
-  "keywords": [],
-  "author": {
-    "name": "Finsweet",
-    "url": "https://finsweet.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/finsweet/developer-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/finsweet/developer-starter/issues"
-  },
   "type": "module",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./bin/build.js",
-    "build": "cross-env NODE_ENV=production node ./bin/build.js",
-    "publish:dev": "concurrently --kill-others-on-fail=false --raw \"bun run dev\" \"wf-publish --env=dev\"",
-    "publish:prod": "wf-publish",
-    "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
-    "lint:fix": "eslint --ignore-path .gitignore ./src --fix",
-    "check": "tsc --noEmit",
-    "format": "prettier --write ./src",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
-    "release": "changeset publish",
-    "update": "pnpm update -i -L -r"
+    "dev": "concurrently --raw -n \"vite\" \"wf-publish --env=dev --dev-port=5173\"",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "publish:global": "wf-publish --env=prod",
+    "publish:pages": "wf-publish --env=prod --by-page",
+    "lint": "eslint src/**/**/*.{js,ts}",
+    "format": "prettier --write src/**/**/*.{js,ts}",
+    "lint:fix": "eslint src/scripts/**/**/*.{js,ts} --fix"
   },
   "devDependencies": {
-    "@changesets/changelog-git": "^0.2.0",
-    "@changesets/cli": "^2.27.1",
-    "@finsweet/eslint-config": "^2.0.7",
-    "@finsweet/tsconfig": "^1.3.4",
-    "@playwright/test": "^1.42.1",
-    "@types/jquery": "^3.5.32",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "concurrently": "^9.1.2",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.20.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
   },
   "dependencies": {
-    "@finsweet/ts-utils": "^0.40.0"
-  },
-  "engines": {
-    "pnpm": ">=9"
+    "@types/jquery": "^3.5.32",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "@yndmitry/vite-plugin-pages": "^0.1.4",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2"
   },
   "config": {
-    "ghUserName": "YNDmitry",
-    "packageManager": "bun",
-    "repositoryName": "dmitry-test-wf"
+    "ghUserName": "yndmitry",
+    "repositoryName": "dmitry-test-wf",
+    "browser": "arc",
+    "packageManager": "bun"
   }
 }
