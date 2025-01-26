@@ -1,5 +1,3 @@
-import homePage from './pages/home'
-
 document.addEventListener('DOMContentLoaded', function () {
-  homePage('yndmitry 21')
+  console.log('123123')
 })
