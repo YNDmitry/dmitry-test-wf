@@ -31,7 +31,6 @@
   "config": {
     "ghUserName": "yndmitry",
     "repositoryName": "dmitry-test-wf",
-    "browser": "arc",
     "packageManager": "bun"
   }
 }
