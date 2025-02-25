@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "wf-publish --env=dev",
+    "dev": "/Users/macbookprom1/Dev/wf-publish-go/bin/wf-publish publish --env dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "publish:global": "/Users/macbookprom1/Dev/wf-publish-go/bin/wf-publish publish --env prod",
+    "publish:global": "/Users/macbookprom1/Dev/wf-publish-go/bin/wf-publish publish",
     "publish:pages": "wf-publish --env=prod --by-page",
     "lint": "eslint src/**/**/*.{js,ts}",
     "format": "prettier --write src/**/**/*.{js,ts}",

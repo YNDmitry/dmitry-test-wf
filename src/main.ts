@@ -1,2 +1,2 @@
 console.log('123123 ')
-console.log('hello ss')
+console.log('hello')
